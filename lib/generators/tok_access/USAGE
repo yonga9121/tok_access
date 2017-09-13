@@ -1,0 +1,33 @@
+Description:
+    Use this generator to create the models that you want give access through tokens
+    It will generate the a migration to add a password_digest attribute to the model.
+    If the model does not exist, will generate it.
+    Also generates a model to handle the related toks. If your model name
+    is User, the associated tok model name will be UserTok.
+
+Example:
+    rails generate tok_access:model User email:string nickname:string birth:date -f
+
+    This will be the output:
+      create  db/migrate/20170913173053_tok_access_create_users.rb
+      create  app/models/user.rb
+      invoke  test_unit
+      create    test/models/user_test.rb
+      create    test/fixtures/users.yml
+      create  db/migrate/20170913173054_create_user_toks.rb
+      create  app/models/user_tok.rb
+      invoke  test_unit
+      insert  app/models/user.rb
+      insert  app/models/user_tok.rb
+
+    If the model already exists, this will be the output:
+      create  db/migrate/20170913173229_add_tok_access_to_users.rb
+      identical  app/models/user.rb
+        invoke  test_unit
+      identical    test/models/user_test.rb
+         force    test/fixtures/users.yml
+        create  db/migrate/20170913173230_create_user_toks.rb
+        create  app/models/user_tok.rb
+        invoke  test_unit
+        insert  app/models/user.rb
+        insert  app/models/user_tok.rb
