@@ -9,6 +9,8 @@ You sould use the devise_token to identify the user devises
 in which the user has logged in and the token to authenticate the
 user request.
 
+TokAccess use bcrypt has_secure_password and has_secure_token to the authentication process and tokens generation
+
 ## Usage
 
 #### Imaging you have a User model and a mobile app in which a user want to sign up.
@@ -85,7 +87,7 @@ user request.
 #### Now the previous user wants to login in an old devise
 
 ```ruby
-  # somewhere in a controller that handle the users registration
+  # somewhere in a controller that handle the users sign in
   # let's say that you are sending the devise_token in a header named
   # APP_DEVISE_TOKEN
 
@@ -142,11 +144,9 @@ The above command will generate two models: User and UserTok
 The migration generated to create the User model will add a column named
 password_digest to store the password.
 
-#### IMPORTANT: If you already have a User model, the command will generate just
-the migration to add the password_digest column
+#### IMPORTANT: If you already have a User model, the command will generate just the migration to add the password_digest column
 
-#### NOTE: You can generate any model to be 'tokifyed'
-just pass the name of the model
+#### NOTE: You can generate any model to be 'tokifyed' just pass the name of the model
 
 ```bash
 $ rails g tok_access:model Person email:string nickname:string
