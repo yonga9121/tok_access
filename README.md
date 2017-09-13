@@ -13,7 +13,7 @@ TokAccess use bcrypt has_secure_password and has_secure_token methods to handle 
 
 ## Usage
 
-#### Imaging you have a User model and a mobile app in which a user want to sign up.
+#### Imagine you have a User model and a mobile app in which a user want to sign up.
 
 ```ruby
   # somewhere in a controller that handle the users registration
