@@ -9,7 +9,7 @@ You sould use the devise_token to identify the user devises
 in which the user has logged in and the token to authenticate the
 user request.
 
-TokAccess use bcrypt has_secure_password and has_secure_token to the authentication process and tokens generation
+TokAccess use bcrypt has_secure_password and has_secure_token methods to handle the authentication process and tokens generation
 
 ## Usage
 
