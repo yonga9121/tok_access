@@ -66,7 +66,7 @@ user request.
 #### Now the previous user wants to login in a new devise
 
 ```ruby
-  # somewhere in a controller that handle the users registration
+  # somewhere in a controller that handle the users sign in
 
   def sign_in
     user = User.find_by(email: params[:email])
