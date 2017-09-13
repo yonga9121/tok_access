@@ -7,11 +7,11 @@ require "tok_access/version"
 Gem::Specification.new do |s|
   s.name        = "tok_access"
   s.version     = TokAccess::VERSION
-  s.authors     = ["Yonga"]
+  s.authors     = ["Jorge Gayon"]
   s.email       = ["jorgeggayon@gmail.com"]
   s.homepage    = "https://github.com/yonga9121/tok_access.git"
-  s.summary     = "Handle the authentication of an object (application user) generating tokens for identify devises and provide access to the object "
-  s.description = "Handle the authentication of an object (application user) generating tokens for identify devises and provide access to the object "
+  s.summary     = "Handle authentication of your users using tokens."
+  s.description = "Handle authentication of your users using tokens."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]

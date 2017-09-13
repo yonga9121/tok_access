@@ -57,7 +57,7 @@ user request.
 
   def tokens_refreshed?
     if current_user and current_user.refreshed?
-      # Come code that allow you to send the tokens to the front-end
+      # Some code that allow you to send the tokens to the front-end
     end
   end
 ```
