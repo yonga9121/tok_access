@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = TokAccess::VERSION
   s.authors     = ["Yonga9121"]
   s.email       = ["jorgeggayon@gmail.com"]
-  s.homepage    = "https://github.com/yonga9121/tok_access.git"
+  s.homepage    = "https://yonga9121.github.io/tok_access/"
   s.summary     = "Handle authentication of your users using tokens."
   s.description = "Handle authentication of your users using tokens."
   s.license     = "MIT"
