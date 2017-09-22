@@ -7,7 +7,7 @@ require "tok_access/version"
 Gem::Specification.new do |s|
   s.name        = "tok_access"
   s.version     = TokAccess::VERSION
-  s.authors     = ["Jorge Gayon"]
+  s.authors     = ["Yonga9121"]
   s.email       = ["jorgeggayon@gmail.com"]
   s.homepage    = "https://github.com/yonga9121/tok_access.git"
   s.summary     = "Handle authentication of your users using tokens."
@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  s.add_dependency "rails", "~> 5.1.4"
+  s.add_dependency "rails", "~> 5.1.0"
   s.add_dependency "bcrypt", "~> 3.1.7"
 
   s.add_development_dependency "sqlite3"
