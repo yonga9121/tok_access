@@ -90,7 +90,10 @@ module TokAccess
             tok = self.toks.create
           else
             tok = self.toks.find_by(device_token: device_token)
-            tok = self.toks.create if !tok
+            if !tok
+              self.toks.order(updated_at: :asc).first.destroy if self.toks.count >= TokAccess.config.tokens_limit
+              tok = self.toks.create
+            end
             tok.regenerate_token
             tok.regenerate_device_token
           end
