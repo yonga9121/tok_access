@@ -90,8 +90,9 @@ module TokAccess
             tok = self.toks.create
           else
             tok = self.toks.find_by(device_token: device_token)
-            tok.regenerate_token if tok
-            tok.regenerate_device_token if tok
+            tok = self.toks.create if !tok
+            tok.regenerate_token
+            tok.regenerate_device_token
           end
           if tok
             @refreshed = true
