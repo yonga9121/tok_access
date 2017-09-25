@@ -29,7 +29,7 @@ module TokAccess
         tok_model_class_name = "#{table_name.singularize}_tok".camelize
         if behavior == :invoke
           if !File.exist?(Rails.root.join("app", "models", "#{tok_model_table_name}.rb"))
-            invoke "active_record:model", [tok_model_class_name, "token:string","devise_token:string", "object_id:integer"]
+            invoke "active_record:model", [tok_model_class_name, "token:string","device_token:string", "object_id:integer"]
           end
           inject_into_class(Rails.root.join("app", "models", "#{table_name.singularize}.rb"), Object.const_get(table_name.singularize.camelize)) do
             %Q{\ttokify\n}

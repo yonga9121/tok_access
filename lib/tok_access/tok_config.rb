@@ -43,8 +43,8 @@ module TokAccess
                    class_name: "#{self.to_s.gsub(/Tok\z/,'')}",
                    foreign_key: "object_id" if association
         has_secure_token
-        has_secure_token :devise_token
-        validates :token, :devise_token, presence: true, on: :update
+        has_secure_token :device_token
+        validates :token, :device_token, presence: true, on: :update
       end
     end
   end

@@ -3,9 +3,9 @@ Handle authentication of your users using tokens.
 Every 'tokified' user will have a association named
 toks.
 
-A tok is an object that consist of two attributes: token, devise_token.
+A tok is an object that consist of two attributes: token, device_token.
 
-You should use the devise_token to identify the user devices
+You should use the device_token to identify the user devices
 in which the user has logged in and the token to authenticate the
 user request.
 
@@ -24,7 +24,7 @@ TokAccess use bcrypt has_secure_password and has_secure_token methods to handle 
       # if the user is saved, an associated tok is created
       # and you can access that tok using the following methods
       token = user.get_token
-      devise_token = user.get_devise_token
+      device_token = user.get_device_token
       #  return the tokens to the front-end.
     else
       # code if the user can't be saved
@@ -50,8 +50,8 @@ TokAccess use bcrypt has_secure_password and has_secure_token methods to handle 
     current_user ? current_user.get_token : nil
   end
 
-  def current_devise_token
-    current_user ? current_user.get_devise_token : nil
+  def current_device_token
+    current_user ? current_user.get_device_token : nil
   end
 
   # After 15 minutes, the next user request will refresh the tokens.
@@ -76,7 +76,7 @@ TokAccess use bcrypt has_secure_password and has_secure_token methods to handle 
       # if the user is authenticated successfully, a new tok is created
       # and you can access that tok using the following methods
       token = user.get_token
-      devise_token = user.get_devise_token
+      device_token = user.get_device_token
       # then you should return to the front-end the tokens.
     else
       # code if the user authentication fails
@@ -88,22 +88,22 @@ TokAccess use bcrypt has_secure_password and has_secure_token methods to handle 
 
 ```ruby
   # somewhere in a controller that handle the users sign in
-  # let's say that you are sending a devise_token in a header named
-  # APP_DEVISE_TOKEN
+  # let's say that you are sending a device_token in a header named
+  # APP_device_TOKEN
 
   def sign_in
     user = User.find_by(email: params[:email])
-    if user.tok_auth(params[:password], request.headers["HTTP_APP_DEVISE_TOKEN"])
+    if user.tok_auth(params[:password], request.headers["HTTP_APP_device_TOKEN"])
       # if the user is authenticated successfully and the tok related to the
-      # given devise_token is found, the token and devise_token are regenerated
-      # and you can access that tok using the get_token and get_devise_token
+      # given device_token is found, the token and device_token are regenerated
+      # and you can access that tok using the get_token and get_device_token
       # methods.
       # if the user is authenticated successfully and the tok related to the
-      # given devise_token wasn't found, a new tok is created and you can access
-      # that tok using the get_token and get_devise_token
+      # given device_token wasn't found, a new tok is created and you can access
+      # that tok using the get_token and get_device_token
       # methods.
       token = user.get_token
-      devise_token = user.get_devise_token
+      device_token = user.get_device_token
       # then you should return to the front-end the tokens.
     else
       # code if the user authentication fails

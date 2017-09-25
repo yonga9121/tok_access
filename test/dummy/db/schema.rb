@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 20170913173650) do
 
   create_table "user_toks", force: :cascade do |t|
     t.string "token"
-    t.string "devise_token"
+    t.string "device_token"
     t.integer "object_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
