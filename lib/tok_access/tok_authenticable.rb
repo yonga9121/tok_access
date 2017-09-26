@@ -50,7 +50,7 @@ module TokAccess
           nil
         end
 
-        # If the object is associated to the tok given the method will return
+        # If the object is associated to the tok given, the method will return
         # the object and the methods #get_tok and #get_device_tok will
         # return the tokens. Otherwise return nil
         def provide_access(tok)
@@ -61,6 +61,13 @@ module TokAccess
             return self
           end
           nil
+        end
+
+        # Create a new tok with a new token and a new device_token
+        # that can be access using the methods #get_token and #get_device_token.
+        def create_tok
+          generate_access_toks
+          return self
         end
 
         private

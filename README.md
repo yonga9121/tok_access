@@ -119,6 +119,16 @@ TokAccess use bcrypt has_secure_password and has_secure_token methods to handle 
 
 ```
 
+#### If you need to generate a new tok without validating anything
+```ruby
+  # Previously created user.
+  user = User.find(1)
+  user.create_tok
+  token = user.get_token
+  device_token = user.get_device_token
+
+```
+
 
 ## Installation
 Add this line to your application's Gemfile:
