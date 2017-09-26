@@ -119,7 +119,7 @@ TokAccess use bcrypt has_secure_password and has_secure_token methods to handle 
 
 ```
 
-#### If you need to generate a new tok without validating anything
+#### If you need to generate a new tok without validating anything.
 ```ruby
   # Previously created user.
   user = User.find(1)
