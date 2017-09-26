@@ -134,7 +134,7 @@ TokAccess use bcrypt has_secure_password and has_secure_token methods to handle 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'tok_access', '~> 1.1.2'
+gem 'tok_access', '~> 1.1.3'
 ```
 
 And then execute:
