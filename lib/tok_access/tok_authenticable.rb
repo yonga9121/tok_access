@@ -73,8 +73,8 @@ module TokAccess
         private
 
         def refresh(tok)
-          if tok.updated_at >= 15.minutes.ago
-            tok.touch
+          if tok.updated_at >= 15.minutes.ago.to_datetime
+            tok.regenerate_token
             @refreshed = true
           end
         end
